@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL || "https://research-paper-explorer-751e.onrender.com";
+const API_URL = import.meta.env.VITE_API_URL || "https://research-paper-explorer-backend.vercel.app";
 
 
 export async function searchPapers(query) {
@@ -26,4 +26,4 @@ export async function analyzePaper(title, abstract) {
     );
 
     return response.data;
-}
+}
