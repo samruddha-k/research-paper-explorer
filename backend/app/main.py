@@ -7,18 +7,15 @@ app = FastAPI(
     title="Research Paper Explorer API"
 )
 
-# Allow requests from the React frontend
-origins = [
-    "http://localhost:5173",
-    "http://localhost:5174",
-]
+# Allow requests from frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 app.include_router(papers.router)
 app.include_router(ai.router)
